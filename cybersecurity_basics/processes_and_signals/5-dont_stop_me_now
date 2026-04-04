@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 # Stop the 4-to_infinity_and_beyond process using kill
 # shellcheck disable=SC2009
-for pid in $(pgrep -f 4-to_infinity_and_beyond); do
-    kill "$pid"
-done
 
-# Confirm the process is killed
+# Get PIDs of the process
+pids=$(pgrep -f 4-to_infinity_and_beyond)
+
+# If any PID found, kill them
+if [[ -n "$pids" ]]; then
+    kill $pids
+fi
+
+# Confirm
 echo "process killed"
