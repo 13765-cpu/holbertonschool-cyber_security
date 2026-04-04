@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Display messages indefinitely and handle signals with custom responses
+
+# Save PID
+echo $$ > /tmp/myscript.pid
+
+# Trap signals
+trap 'echo "I hate the kill command"' SIGTERM
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'rm -f /tmp/myscript.pid; exit' SIGQUIT SIGTERM
+
+# Infinite loop
+while true; do
+    echo "To infinity and beyond indefinitely"
+    sleep 2
+done
