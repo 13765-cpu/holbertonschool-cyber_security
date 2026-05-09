@@ -1,2 +1,2 @@
 #!/bin/bash
-hping3 -S -V "$1"
+hping3 -S -c 1 -V "$1"
