@@ -1,2 +1,2 @@
 #!/bin/bash
-iptables-restore < /etc/iptables/rules.v4
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
