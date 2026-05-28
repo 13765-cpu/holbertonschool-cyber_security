@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo iptables -A INPUT -p tcp --dport 80 -s $1 -j ACCEPT
+sudo ufw allow from $1 to any port 80 proto tcp
