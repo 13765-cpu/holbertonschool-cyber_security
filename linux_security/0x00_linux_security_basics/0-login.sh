@@ -1,2 +1,2 @@
 #!/bin/bash
-last -5 -f /var/log/wtmp
+last -n 5 -R
