@@ -1,2 +1,3 @@
 #!/bin/bash
-john --wordlist=/tmp/rockyou.txt "$1" > /dev/null && john --show "$1" | awk -F: '{print $2}' > 4-password.txt
+john --wordlist=rockyou.txt "$1" > /dev/null 2>&1
+john --show "$1" | cut -d: -f2 > 4-password.txt
