@@ -1,0 +1,2 @@
+#!/bin/bash
+whois $1 | awk -F': *' '/^Registrant Name:/ {print "Registrant Name," $2} /^Registrant Organization:/ {print "Registrant Organization," $2} ...' > "$1.csv"
