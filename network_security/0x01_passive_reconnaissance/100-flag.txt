@@ -1,1 +1,1 @@
- flags: qr aa rd ra
+ qr aa rd ra
